@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricing Page</title>
+  <link rel="stylesheet" href="Pricing_Page.css">
+  
+</head>
+<body>
+
+  <header>
+    <h1>Pricing Landing Page</h1>
+  </header>
+
+  <section>
+    <!-- Customization form -->
+    <div class="customization-form">
+      <label for="currency">Currency Symbol:</label>
+      <input type="text" id="currency" class="customization-input" placeholder="$">
+
+      <label for="unit">Measurement Unit:</label>
+      <input type="text" id="unit" class="customization-input" placeholder="unit">
+    </div>
+
+    <div class="pricing-table">
+        
+      <div class="pricing-column">
+        <div class="pricing-header">
+          <h2>Free</h2>
+        </div>
+        <div class="price">
+          <span id="currency-basic">$</span>0.00/month
+        </div>
+        <ul class="features">
+          <li class="feature">Feature 1</li>
+          <li class="feature">Feature 2</li>
+          <li class="feature">Feature 3</li>
+        </ul>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+      
+      <div class="pricing-column">
+        <div class="pricing-header">
+          <h2>Basic</h2>
+        </div>
+        <div class="price">
+          <span id="currency-basic">$</span>9.99/month
+        </div>
+        <ul class="features">
+          <li class="feature">Feature 1</li>
+          <li class="feature">Feature 2</li>
+          <li class="feature">Feature 3</li>
+        </ul>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+
+      <div class="pricing-column">
+        <div class="pricing-header">
+          <h2>Pro</h2>
+        </div>
+        <div class="price">
+          <span id="currency-pro">$</span>49.99/month
+        </div>
+        <ul class="features">
+          <li class="feature">Feature 1</li>
+          <li class="feature">Feature 2</li>
+          <li class="feature">Feature 3</li>
+        </ul>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+
+      <div class="pricing-column">
+        <div class="pricing-header">
+          <h2>Premium</h2>
+        </div>
+        <div class="price">
+          <span id="currency-premium">$</span>79.99/month
+        </div>
+        <ul class="features">
+          <li class="feature">Feature 1</li>
+          <li class="feature">Feature 2</li>
+          <li class="feature">Feature 3</li>
+        </ul>
+        <a href="#" class="btn">Get Started</a>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function selectPricing(option) {
+      const radio = document.getElementById(option);
+      radio.checked = true;
+    }
+
+    // Update currency symbols and measurement units based on user input
+    document.getElementById('currency').addEventListener('input', function () {
+      const currencyInputs = document.querySelectorAll('[id^="currency-"]');
+      currencyInputs.forEach(input => {
+        input.textContent = this.value;
+      });
+    });
+
+    document.getElementById('unit').addEventListener('input', function () {
+      const unitInputs = document.querySelectorAll('[id^="unit-"]');
+      unitInputs.forEach(input => {
+        input.textContent = this.value;
+      });
+    });
+  </script>
+
+</body>
+</html>
